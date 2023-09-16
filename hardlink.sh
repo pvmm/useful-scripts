@@ -18,7 +18,7 @@ if [ ! -d "$source_dir" ]; then
 fi
 
 # Use 'find' to locate all files in the source directory
-find "$source_dir" -type f | while read source_file; do
+find "$source_dir" -type f,l | while read source_file; do
     # Calculate the destination path
     destination_file="$destination_dir/${source_file#$source_dir}"
 
